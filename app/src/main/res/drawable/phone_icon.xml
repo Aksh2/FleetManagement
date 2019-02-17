@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@android:drawable/stat_sys_phone_call"
+        android:width="@dimen/list_view_icon_width"
+        android:height="@dimen/list_view_icon_height"/>
+</layer-list>
