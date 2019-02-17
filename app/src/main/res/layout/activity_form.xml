@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/activity_margin"
+    tools:context=".view.FormActivity">
+
+     <TextView
+            android:id="@+id/nameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_label"
+            style="@style/TextViewStyle"
+            app:layout_constraintLeft_toLeftOf="parent"
+         />
+
+
+     <EditText
+            android:id="@+id/nameEt"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="@dimen/editText_height"
+            android:background="@drawable/border"
+            style="@style/EditTextStyle"
+            app:layout_constraintTop_toBottomOf="@id/nameTv"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+
+         />
+
+    <TextView
+        android:id="@+id/mobileTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mobile_label"
+        style="@style/TextViewStyle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/nameEt"/>
+
+
+    <EditText
+        android:id="@+id/mobileEt"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/editText_height"
+        android:maxLength="10"
+        android:inputType="number"
+        android:background="@drawable/border"
+        style="@style/EditTextStyle"
+        app:layout_constraintTop_toBottomOf="@id/mobileTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/vehicleNumberTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vehicle_number_label"
+        style="@style/TextViewStyle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mobileEt"/>
+
+
+    <EditText
+        android:id="@+id/vehicleNumberEt"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/editText_height"
+        android:background="@drawable/border"
+        android:maxLength="10"
+        style="@style/EditTextStyle"
+        app:layout_constraintTop_toBottomOf="@id/vehicleNumberTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/vehicleTypeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/vehicle_type_label"
+        style="@style/TextViewStyle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vehicleNumberEt"
+
+        />
+
+
+    <EditText
+        android:id="@+id/vehicleTypeEt"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/editText_height"
+        android:background="@drawable/border"
+        style="@style/EditTextStyle"
+        app:layout_constraintTop_toBottomOf="@id/vehicleTypeTv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+
+        />
+
+    <Button
+        android:id="@+id/submitBt"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="@dimen/editText_height"
+        app:layout_constraintTop_toBottomOf="@id/vehicleTypeEt"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text="@string/button_submit_label"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/bg_button"
+        />
+
+</android.support.constraint.ConstraintLayout>
