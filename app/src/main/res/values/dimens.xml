@@ -3,4 +3,9 @@
     <dimen name="editText_height">56dp</dimen>
     <dimen name="activity_margin">16dp</dimen>
     <dimen name="match_constraint">0dp</dimen>
+
+    <dimen name="list_view_icon_width">15dp</dimen>
+    <dimen name="list_view_icon_height">15dp</dimen>
+    <dimen name="drawable_padding">5dp</dimen>
+
 </resources>

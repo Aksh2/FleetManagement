@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -32,20 +33,9 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        presenter = new MainActivityPresenter(this,new FirestoreHelper());
-
-        FloatingActionButton fab =findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,FormActivity.class);
-                startActivity(intent);
-            }
-        });
         initializeViews();
-        initialiseRecyclerView();
+        presenter = new MainActivityPresenter(this,new FirestoreHelper());
+       initializeRecyclerView();
 
     }
 
@@ -59,10 +49,23 @@ public class MainActivity extends AppCompatActivity implements MainActivityPrese
         recyclerView = findViewById(R.id.fleetRv);
         progressBar=findViewById(R.id.progressBar);
         emptyList=findViewById(R.id.layout_empty_list);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        FloatingActionButton fab =findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,FormActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    private void initialiseRecyclerView(){
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    private void initializeRecyclerView(){
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),((LinearLayoutManager) layoutManager).getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
+        recyclerView.setLayoutManager(layoutManager);
         fleetVehicleAdapter = new FleetVehicleAdapter(this);
         recyclerView.setAdapter(fleetVehicleAdapter);
     }

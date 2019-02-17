@@ -10,28 +10,43 @@
         android:id="@+id/nameItemTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Name"
+        android:textAppearance="?android:attr/textAppearanceListItem"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
         />
     <TextView
         android:id="@+id/numberItemTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="Number"
+        android:textColor="@color/light_gray"
+        android:textSize="14sp"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:drawableTint="@android:color/black"
+        android:drawableLeft="@drawable/phone_icon"
+        android:textAppearance="?android:attr/textAppearanceListItemSecondary"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameItemTv"/>
+        app:layout_constraintTop_toBottomOf="@id/nameItemTv"
+
+        />
     <TextView
         android:id="@+id/vehicleNumberItemTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:text="ka03nd4353"
+        android:textSize="14sp"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:drawableLeft="@drawable/truck_icon"
+        android:textColor="@color/light_gray"
+        android:textAppearance="?android:attr/textAppearanceListItemSecondary"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/numberItemTv"/>
     <TextView
         android:id="@+id/vehicleTypeItemTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
         app:layout_constraintBaseline_toBaselineOf="@id/nameItemTv"
-        tools:text="truck"
+        android:textSize="12sp"
+        android:textAppearance="?android:attr/textAppearanceListItemSecondary"
         app:layout_constraintRight_toRightOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

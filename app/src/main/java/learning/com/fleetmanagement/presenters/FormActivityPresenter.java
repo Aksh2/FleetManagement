@@ -8,6 +8,13 @@ import learning.com.fleetmanagement.data.firestore.FirestoreHelper;
 import learning.com.fleetmanagement.data.models.FleetVehicleModel;
 
 public class FormActivityPresenter {
+
+    public interface View{
+        void onSubmitButtonClicked();
+        void closeActivity();
+        void showError(String message);
+    }
+
     private View view;
     private FirestoreHelper firestoreHelper;
     private static final String  TAG=FormActivity.class.getSimpleName();
@@ -32,11 +39,7 @@ public class FormActivityPresenter {
 
     }
 
-    public interface View{
-        void onSubmitButtonClicked();
-        void closeActivity();
-        void showError(String message);
-    }
+
 
     private boolean validate(FleetVehicleModel fleetVehicleModel){
         boolean flag=true;
